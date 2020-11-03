@@ -1,17 +1,20 @@
-import React from "react";
-import { Container, Products, Listyle, Thumbs } from "./styles";
+import React, { useState } from "react";
+import AddCart from "../AddCart/index";
 
-import m1 from "../../assets/m1.jpg";
-import m2 from "../../assets/m2.jpg";
-import m3 from "../../assets/m3.jpg";
-import m4 from "../../assets/m4.jpg";
+import { Container, Listyle, Thumbs } from "./styles";
 
-function index() {
+import picProduct1 from "../../assets/m1.jpg";
+import picProduct2 from "../../assets/m2.jpg";
+import picProduct3 from "../../assets/m3.jpg";
+import picProduct4 from "../../assets/m4.jpg";
+
+export default function Board() {
+  const [state, setState] = useState("");
+
   return (
-    <Container>
-      <h1>Products</h1>
-      <Products>
-        <img src={m1} alt="" />
+    <>
+      <Container>
+        <img src={state} alt="" />
         <ul>
           <li>May 31, 2019</li>
           <Listyle>
@@ -29,15 +32,30 @@ function index() {
           </Listyle>
           <p>Also i this order</p>
           <Thumbs>
-            <img src={m1} alt="" />
-            <img src={m2} alt="" />
-            <img src={m3} alt="" />
-            <img src={m4} alt="" />
+            <img
+              src={picProduct1}
+              alt=""
+              onClick={({ target }) => setState(target.src)}
+            />
+            <img
+              src={picProduct2}
+              alt=""
+              onClick={({ target }) => setState(target.src)}
+            />
+            <img
+              src={picProduct3}
+              alt=""
+              onClick={({ target }) => setState(target.src)}
+            />
+            <img
+              src={picProduct4}
+              alt=""
+              onClick={({ target }) => setState(target.src)}
+            />
           </Thumbs>
         </ul>
-      </Products>
-    </Container>
+        <AddCart />
+      </Container>
+    </>
   );
 }
-
-export default index;
