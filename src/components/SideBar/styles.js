@@ -7,6 +7,7 @@ export const Container = styled.div`
   img {
     margin-bottom: 5rem;
     width: 100px;
+    cursor: pointer;
   }
 
   ul {

@@ -1,5 +1,6 @@
 import React from "react";
 import Globalstyle from "./styles/global";
+import Products from "./components/Products/index";
 import { Struct, Header, MenuBar, Content } from "./components/styles/styles";
 
 import SideBar from "./components/SideBar/index";
@@ -14,8 +15,9 @@ function App() {
       </MenuBar>
       <Content>
         <Board />
+        <Products />
+        <Products />
       </Content>
-      <div>Ecommerce</div>
       <Globalstyle />
     </Struct>
   );
