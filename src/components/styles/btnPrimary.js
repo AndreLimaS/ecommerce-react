@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Content = styled.div`
+export const BtnPrimary = styled.div`
   justify-content: end;
   button {
     display: flex;

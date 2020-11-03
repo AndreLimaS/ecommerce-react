@@ -14,9 +14,9 @@ function App() {
         <SideBar />
       </MenuBar>
       <Content>
+        <Board />
         <Products />
-        <Board />
-        <Board />
+        <Products />
       </Content>
       <Globalstyle />
     </Struct>

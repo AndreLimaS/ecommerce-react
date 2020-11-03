@@ -1,12 +1,10 @@
 import React from "react";
-import { Content } from "./styles";
+import { BtnPrimary } from "../styles/btnPrimary";
 
-function index() {
+export default function AddCart() {
   return (
-    <Content>
+    <BtnPrimary>
       <button>Add</button>
-    </Content>
+    </BtnPrimary>
   );
 }
-
-export default index;
