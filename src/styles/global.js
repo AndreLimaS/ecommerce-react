@@ -23,4 +23,8 @@ export default createGlobalStyle`
   button {
     border:none;
   }
+  a{
+    text-decoration: none;
+    color: #333;
+  }
 `;

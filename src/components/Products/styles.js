@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   max-width: 1200px;
   padding: 0 4rem 4rem;
+  flex-flow: wrap;
 
   img {
     width: 200px;
