@@ -6,7 +6,9 @@ import logo from "../../assets/logo.png";
 function index() {
   return (
     <Container>
-      <img src={logo} alt="" />
+      <NavLink to="/">
+        <img src={logo} alt="" />
+      </NavLink>
       <ul>
         <NavLink to="/">
           <li>
