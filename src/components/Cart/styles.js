@@ -6,6 +6,10 @@ export const Container = styled.div`
   grid-template:
     "title title"
     "products  card";
+
+  .iconClass {
+    cursor: pointer;
+  }
 `;
 
 export const Title = styled.div`

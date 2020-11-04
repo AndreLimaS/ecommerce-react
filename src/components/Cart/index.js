@@ -32,19 +32,12 @@ export default function Cart() {
             </li>
           </ul>
           <LabelNumber>
-            <RemoveIcon
-              style={{ cursor: "pointer" }}
-              onClick={() => setQtd(qtd - 1)}
-            />
+            <RemoveIcon className="iconClass" onClick={() => setQtd(qtd - 1)} />
             <p>{qtd}</p>
-            <AddIcon
-              disabled
-              style={{ cursor: "pointer" }}
-              onClick={() => setQtd(qtd + 1)}
-            />
+            <AddIcon className="iconClass" onClick={() => setQtd(qtd + 1)} />
           </LabelNumber>
           <span>R$ {price * qtd}</span>
-          <CloseIcon style={{ cursor: "pointer" }} />
+          <CloseIcon className="iconClass" />
         </ListPodruct>
         <CardDetails>
           <h3>Card Type</h3>
