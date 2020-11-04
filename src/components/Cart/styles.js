@@ -5,7 +5,8 @@ export const Container = styled.div`
   grid-template-columns: 3fr minmax(320px, 1fr);
   grid-template:
     "title title"
-    "products  card";
+    "products  card"
+    "footer card";
 
   .iconClass {
     cursor: pointer;
@@ -56,4 +57,12 @@ export const CardDetails = styled.div`
   height: 50vh;
   margin: 1rem;
   border-radius: 8px;
+`;
+
+export const FooterCart = styled.div`
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0rem 3rem 3rem 3rem;
 `;

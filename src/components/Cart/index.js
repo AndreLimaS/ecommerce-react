@@ -5,7 +5,9 @@ import {
   CardDetails,
   LabelNumber,
   Title,
+  FooterCart,
 } from "./styles";
+import { NavLink } from "react-router-dom";
 import CloseIcon from "@material-ui/icons/Close";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
@@ -39,6 +41,14 @@ export default function Cart() {
           <span>R$ {price * qtd}</span>
           <CloseIcon className="iconClass" />
         </ListPodruct>
+        <FooterCart>
+          <NavLink to="/">
+            <span> ← Continue Shopping</span>
+          </NavLink>
+          <span>
+            <span>Subtotal:</span> R$ {price * qtd}
+          </span>
+        </FooterCart>
         <CardDetails>
           <h3>Card Type</h3>
         </CardDetails>
