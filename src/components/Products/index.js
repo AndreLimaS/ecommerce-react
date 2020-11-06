@@ -1,61 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import AddCart from "../AddCart/index";
-
+import { listproducts } from "../../services/api";
 import { Container, Listyle, Thumbs } from "./styles";
 
-import picProduct1 from "../../assets/m1.jpg";
-import picProduct2 from "../../assets/m2.jpg";
-import picProduct3 from "../../assets/m3.jpg";
-import picProduct4 from "../../assets/m4.jpg";
-
 export default function Board() {
-  const [state, setState] = useState(picProduct1);
+  const [products, setProducts] = React.useState(null);
+  React.useEffect(() => {
+    getProducts();
+  }, []);
 
+  async function getProducts() {
+    const response = await listproducts();
+    setProducts(response);
+  }
+
+  if (products === null) return null;
   return (
     <>
-      <Container>
-        <img src={state} alt="" />
-        <ul>
-          <li>May 31, 2019</li>
-          <Listyle>
-            <li style={{ fontSize: "1.5rem" }}>Mochila</li>
-          </Listyle>
+      {products.map(({ id, name, images, price, sku }) => (
+        <Container key={id}>
+          <img src={images[0]} alt="" />
+          <ul>
+            <li>May 31, 2019</li>
+            <Listyle>
+              <li style={{ fontSize: "1.5rem" }}>{name}</li>
+            </Listyle>
 
-          <li>Order #</li>
-          <Listyle>
-            <li>30004</li>
-          </Listyle>
+            <li>Order</li>
+            <Listyle>
+              <li>{sku}</li>
+            </Listyle>
 
-          <li>Price</li>
-          <Listyle>
-            <li>$324. 96</li>
-          </Listyle>
-          <p>Also i this order</p>
-          <Thumbs>
-            <img
-              src={picProduct1}
-              alt=""
-              onClick={({ target }) => setState(target.src)}
-            />
-            <img
-              src={picProduct2}
-              alt=""
-              onClick={({ target }) => setState(target.src)}
-            />
-            <img
-              src={picProduct3}
-              alt=""
-              onClick={({ target }) => setState(target.src)}
-            />
-            <img
-              src={picProduct4}
-              alt=""
-              onClick={({ target }) => setState(target.src)}
-            />
-          </Thumbs>
-        </ul>
-        <AddCart />
-      </Container>
+            <li>Price</li>
+            <Listyle>
+              <li>${price}</li>
+            </Listyle>
+            <p>Also i this order</p>
+            <Thumbs>
+              <img
+                src={images[1]}
+                alt=""
+                // onClick={({ target }) => setState(target.src)}
+              />
+            </Thumbs>
+          </ul>
+          <AddCart />
+        </Container>
+      ))}
     </>
   );
 }
