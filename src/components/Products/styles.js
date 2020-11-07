@@ -19,18 +19,3 @@ export const Listyle = styled.div`
   margin-bottom: 1.5rem;
   font-weight: 600;
 `;
-
-export const Thumbs = styled.div`
-  display: flex;
-
-  img {
-    width: 60px;
-    padding: 5px 0 0 8px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  img:hover {
-    transform: scale(1.2);
-  }
-`;
