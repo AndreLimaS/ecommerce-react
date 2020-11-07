@@ -9,7 +9,8 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   html, body, #root {
-    height: 100%;
+    
+    min-height: 100vh;
   }
   body {
     font: 14px 'Roboto', sans-serif;
