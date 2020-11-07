@@ -14,7 +14,7 @@ export default function Board() {
     setProducts(response);
   }
 
-  if (products === null) return null;
+  if (products === null || products === "") return null;
   return (
     <>
       {products.map(({ id, name, images, price, sku }) => (

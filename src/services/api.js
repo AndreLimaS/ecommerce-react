@@ -16,17 +16,17 @@ function fakeFetch() {
         },
         {
           id: 2,
-          name: "Mochila 1",
+          name: "Mochila 2",
           images: [picProduct1, picProduct2, picProduct3, picProduct4],
-          price: 300.0,
-          sku: "#12345",
+          price: 200.0,
+          sku: "#432143",
         },
         {
           id: 3,
-          name: "Mochila 1",
+          name: "Mochila 3",
           images: [picProduct1, picProduct2, picProduct3, picProduct4],
-          price: 300.0,
-          sku: "#12345",
+          price: 350.0,
+          sku: "#6543654",
         },
       ]);
     }, 500)
