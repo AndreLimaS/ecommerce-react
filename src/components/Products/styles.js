@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding: 0 4rem 4rem;
   flex-flow: wrap;
 
-  img {
+  .thumb-principal {
     width: 200px;
   }
 

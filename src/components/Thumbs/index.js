@@ -1,8 +1,7 @@
 import React from "react";
-import { listproducts } from "../../services/api";
 import { ThumbImgs } from "./styles";
 
-export default function Thumbs() {
+export default function Thumbs({ products }) {
   const [thumbs, setThumbs] = React.useState(null);
 
   React.useEffect(() => {
@@ -10,7 +9,7 @@ export default function Thumbs() {
   }, []);
 
   async function getThumbs() {
-    const response = await listproducts();
+    const response = await products;
     response.map(({ images }) => setThumbs(images));
   }
 

@@ -20,7 +20,7 @@ export default function Products() {
     <>
       {products.map(({ id, name, images, price, sku }) => (
         <Container key={id}>
-          <img src={images[0]} alt="" />
+          <img src={images[0]} alt="" className="thumb-principal" />
           <ul>
             <li>May 31, 2019</li>
             <Listyle>
@@ -37,7 +37,7 @@ export default function Products() {
               <li>${price}</li>
             </Listyle>
             <p>Also i this order</p>
-            <Thumbs />
+            <Thumbs products={products} />
           </ul>
           <AddCart />
         </Container>
