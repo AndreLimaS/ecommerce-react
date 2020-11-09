@@ -1,9 +1,10 @@
 import React from "react";
 import AddCart from "../AddCart/index";
+import Thumbs from "../Thumbs/index";
 import { listproducts } from "../../services/api";
-import { Container, Listyle, Thumbs } from "./styles";
+import { Container, Listyle } from "./styles";
 
-export default function Board() {
+export default function Products() {
   const [products, setProducts] = React.useState(null);
   React.useEffect(() => {
     getProducts();
@@ -19,7 +20,7 @@ export default function Board() {
     <>
       {products.map(({ id, name, images, price, sku }) => (
         <Container key={id}>
-          <img src={images[0]} alt="" />
+          <img src={images[0]} alt="" className="thumb-principal" />
           <ul>
             <li>May 31, 2019</li>
             <Listyle>
@@ -36,13 +37,7 @@ export default function Board() {
               <li>${price}</li>
             </Listyle>
             <p>Also i this order</p>
-            <Thumbs>
-              <img
-                src={images[1]}
-                alt=""
-                // onClick={({ target }) => setState(target.src)}
-              />
-            </Thumbs>
+            <Thumbs products={products} />
           </ul>
           <AddCart />
         </Container>
